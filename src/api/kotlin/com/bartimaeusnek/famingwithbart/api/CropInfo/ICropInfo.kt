@@ -11,11 +11,12 @@ interface ICropInfo {
     fun get_displayName(): String
     fun get_author(): String
     fun get_tier():Byte
-    fun get_drops():ArrayList<ItemStack>
+    fun get_drops():List<ItemStack>
     fun get_needed_below():ItemStack
     fun get_breedingTree():IBreedingTree
     fun get_max_size():Byte
     fun get_needed_climate():IClimate
+    fun get_tolerance():ByteArray
 
     fun get_can_grow(crop : CropTE):Boolean
 

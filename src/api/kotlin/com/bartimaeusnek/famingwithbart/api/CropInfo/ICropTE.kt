@@ -27,7 +27,6 @@ interface ICropTE{
     fun harvest_crop():Boolean
     fun pick_crop():Boolean
     fun pick_weeds():Boolean
-    fun invalidate():Boolean
 
     fun water_crop(amount : Byte):Byte //set water
     fun fertilize_crop(amount : Byte):Byte //set nutrients

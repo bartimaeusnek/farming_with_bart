@@ -9,9 +9,8 @@ interface IClimate {
     fun get_solar_level():Byte
     fun get_nutrient_level():Byte
     fun get_windlevel():Byte
-
-    fun get_biomes():ArrayList<Biome>
-
-    fun get_special():ArrayList<Boolean>
+    fun get_climate_as_Array():ByteArray
+    fun get_biomes():List<Biome>
+    fun get_special():List<Boolean>
 
 }
