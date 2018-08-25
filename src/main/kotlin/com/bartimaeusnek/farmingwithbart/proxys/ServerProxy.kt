@@ -1,10 +1,10 @@
-package com.bartimaeusnek.famingwithbart.proxys
+package com.bartimaeusnek.farmingwithbart.proxys
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 
-class ClientProxy : CommonProxy{
+class ServerProxy : CommonProxy{
 
     constructor(): super()
 

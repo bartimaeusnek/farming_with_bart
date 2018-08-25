@@ -1,6 +1,6 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo.implementations.climates
+package com.bartimaeusnek.farmingwithbart.api.CropInfo.implementations.climates
 
-import com.bartimaeusnek.famingwithbart.api.CropInfo.IClimate
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.IClimate
 import net.minecraft.world.biome.Biome
 
 class TestClimate : IClimate {

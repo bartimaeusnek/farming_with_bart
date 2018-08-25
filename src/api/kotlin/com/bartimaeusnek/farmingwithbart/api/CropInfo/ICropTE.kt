@@ -1,4 +1,4 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo
+package com.bartimaeusnek.farmingwithbart.api.CropInfo
 
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NBTTagCompound
@@ -14,9 +14,9 @@ interface ICropTE{
 
     fun get_size():Byte
 
-    fun get_climate():IClimate
-    fun get_CropInfo():ICropInfo
-    fun get_breedingTree():IBreedingTree
+    fun get_climate(): IClimate
+    fun get_CropInfo(): ICropInfo
+    fun get_breedingTree(): IBreedingTree
 
     fun get_try_cross():Boolean
     fun get_isolation():Boolean

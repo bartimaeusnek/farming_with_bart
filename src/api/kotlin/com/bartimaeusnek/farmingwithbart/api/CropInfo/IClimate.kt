@@ -1,4 +1,4 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo
+package com.bartimaeusnek.farmingwithbart.api.CropInfo
 
 import net.minecraft.world.biome.Biome
 

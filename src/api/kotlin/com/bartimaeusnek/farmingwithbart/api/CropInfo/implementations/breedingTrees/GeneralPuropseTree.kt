@@ -1,6 +1,6 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo.implementations.breedingTrees
+package com.bartimaeusnek.farmingwithbart.api.CropInfo.implementations.breedingTrees
 
-import com.bartimaeusnek.famingwithbart.api.CropInfo.IBreedingTree
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.IBreedingTree
 
 class GeneralPuropseTree(branch : String, tier :Byte, mutationrate :Byte, normalised :Byte) : IBreedingTree {
 

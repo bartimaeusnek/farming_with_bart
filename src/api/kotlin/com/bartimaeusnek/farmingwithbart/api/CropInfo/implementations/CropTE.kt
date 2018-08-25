@@ -1,7 +1,10 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo
+package com.bartimaeusnek.farmingwithbart.api.CropInfo.implementations
 
-import com.bartimaeusnek.famingwithbart.api.CropInfo.implementations.climates.ClimateRegistry
-import net.minecraft.init.Items
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.IBreedingTree
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.IClimate
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.ICropInfo
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.ICropTE
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.implementations.climates.ClimateRegistry
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
@@ -9,21 +12,21 @@ import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
 import java.util.*
 
-open class CropTE(CropInfo : ICropInfo) : TileEntity(), ICropTE {
+open class CropTE(CropInfo : ICropInfo?) : TileEntity(), ICropTE {
 
     var size: Byte = 0
-    var climate:IClimate = ClimateRegistry.registry[this.getWorld().getBiome(this.getPos())]!!
+    var climate: IClimate = ClimateRegistry.registry[this.getWorld().getBiome(this.getPos())]!!
 
     var growquallity: ByteArray = byteArrayOf(-1,-1,-1) //Growth Gain Resistance
     var plantstats: ByteArray = byteArrayOf(-1,-1,-1)
     var playerinfluencedstats:  ByteArray = byteArrayOf(-1,-1,-1)
 
-    var CropInfo : ICropInfo = CropInfo
+    var CropInfo : ICropInfo? = CropInfo
 
     var statArray: Array<ByteArray> = arrayOf(growquallity,plantstats,playerinfluencedstats)
     var dirty = true
 
-    constructor(growquallity: ByteArray,plantstats: ByteArray, playerinfluencedstats:  ByteArray, CropInfo:ICropInfo) : this(CropInfo) {
+    constructor(growquallity: ByteArray,plantstats: ByteArray, playerinfluencedstats:  ByteArray, CropInfo: ICropInfo) : this(CropInfo) {
         statArray = arrayOf(growquallity,plantstats,playerinfluencedstats)
     }
 
@@ -32,7 +35,7 @@ open class CropTE(CropInfo : ICropInfo) : TileEntity(), ICropTE {
 
     }
 
-    constructor(Gain :Byte, Growth:Byte, Resistance :Byte,CropInfo : ICropInfo ) : this(CropInfo) {
+    constructor(Gain :Byte, Growth:Byte, Resistance :Byte,CropInfo : ICropInfo) : this(CropInfo) {
         growquallity = byteArrayOf(Gain,Growth,Resistance)
     }
 
@@ -84,15 +87,15 @@ open class CropTE(CropInfo : ICropInfo) : TileEntity(), ICropTE {
 
     override fun get_climate(): IClimate = climate
 
-    override fun get_CropInfo(): ICropInfo = CropInfo
+    override fun get_CropInfo(): ICropInfo = CropInfo!!
 
-    override fun get_breedingTree(): IBreedingTree = CropInfo.get_breedingTree()
+    override fun get_breedingTree(): IBreedingTree = CropInfo!!.get_breedingTree()
 
     override fun get_try_cross(): Boolean = true
 
     override fun get_isolation(): Boolean = true
 
-    override fun get_drop(): ItemStack = CropInfo.get_drops()[SplittableRandom().nextInt(CropInfo.get_drops().size)]
+    override fun get_drop(): ItemStack = CropInfo!!.get_drops()[SplittableRandom().nextInt(CropInfo!!.get_drops().size)]
 
     override fun get_seeds(): ItemStack = ItemStack.EMPTY
 

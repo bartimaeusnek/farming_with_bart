@@ -1,15 +1,15 @@
-package com.bartimaeusnek.famingwithbart.api.CropInfo
+package com.bartimaeusnek.farmingwithbart.api.CropInfo
 
+import com.bartimaeusnek.farmingwithbart.api.CropInfo.implementations.CropTE
 import net.minecraftforge.fml.common.Loader
 import net.minecraftforge.fml.common.ModContainer
 import net.minecraftforge.fml.relauncher.SideOnly
 import net.minecraft.util.ResourceLocation
-import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.Side.CLIENT
 
-abstract class CropInfo : ICropInfo{
+abstract class CropInfo : ICropInfo {
 
-    constructor(name:String,discovered:String,resourceLocationList: List<ResourceLocation>, climate : IClimate, breedingtree : IBreedingTree){
+    constructor(name:String, discovered:String, resourceLocationList: List<ResourceLocation>, climate : IClimate, breedingtree : IBreedingTree){
         this.name=name
         this.author=discovered
         this.re=resourceLocationList
